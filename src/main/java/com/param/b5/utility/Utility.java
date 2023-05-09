@@ -94,5 +94,7 @@ public class Utility {
 		Select select=new Select(dropDown);//select yeh webelement return karta hai to dropdown 
 		select.selectByVisibleText(valueToSelect);//aur value select krna hai toh valueToSelect
 	}
-
+	
+	public void login()
+	{}
 }
