@@ -95,6 +95,5 @@ public class Utility {
 		select.selectByVisibleText(valueToSelect);//aur value select krna hai toh valueToSelect
 	}
 	
-	public void login()
-	{}
+	
 }
