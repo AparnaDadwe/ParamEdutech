@@ -22,7 +22,7 @@ public class VerifyApplicationHomePageTitle {
 	HomePage homePage;//ya pain homepage ko initialize karna padega
 	                  //test case main homePage ka object bana diya
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	
 	public void setup() throws IOException {
 		
@@ -55,7 +55,7 @@ public class VerifyApplicationHomePageTitle {
 		
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	 public void tearDown() {
 		 driver.quit();
 	 }

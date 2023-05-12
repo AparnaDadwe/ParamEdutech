@@ -3,19 +3,20 @@
 <suite name="Suite">
 	<groups>
 		<run>
-			<include name="e2e">
-				
-			</include>
+			<include name="sanity"></include>
 		</run>
 	</groups>
-  <test thread-count="5" name="Test">
-    <classes>
-     <!--  <class name="testCase.VerifyApplicationHomePageTitle"/>
-      <class name="testCase.VerifyNewTourRegistration"/>-->
-      <class name="testCase.VerifyOmayoBlogHomePage"/>
-      <class name="testCase.VerifyCheckBoxAndRadioButton"/>
-     <!-- <class name="testCase.TestCaseForReadExcelData"/>
-      <class name="testCase.IfTestFailureThenScreenShot"/>--> 
-    </classes>
-  </test> <!-- Test -->
+	<!-- 	<listeners>
+		<listener class-name="com.param.b5.utility.Listner"></listener>
+	</listeners>-->
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="testCase.VerifyApplicationHomePageTitle" />
+			<!-- <class name="testCase.VerifyNewTourRegistration"/>-->
+			<!--<class name="testCase.VerifyOmayoBlogHomePage"/>
+      <class name="testCase.VerifyCheckBoxAndRadioButton"/>-->
+			<!-- <class name="testCase.TestCaseForReadExcelData"/>
+      <class name="testCase.IfTestFailureThenScreenShot"/>-->
+		</classes>
+	</test> <!-- Test -->
 </suite> <!-- Suite -->
