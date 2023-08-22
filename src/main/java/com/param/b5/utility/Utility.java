@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -96,18 +97,18 @@ public class Utility {
 		select.selectByVisibleText(valueToSelect);//aur value select krna hai toh valueToSelect
 	}
 	//method to select single date from datePicker
-	public static void selectDateFromDatePicker(WebDriver driver,String month, String year,String dateToSelect) {
+public static void selectDateFromDatePicker(WebDriver driver,String month, String year,String dateToSelect) {
 		
-		driver.findElement(By.xpath("//input[@id='dateOfBirthInput']")).click();
-		WebElement monthDropDown=driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']"));
-		Utility.selectVlueFromDropDown(monthDropDown, month);//Utility.selectVlueFromDropDown() this is method 
+driver.findElement(By.xpath("//input[@id='dateOfBirthInput']")).click();
+WebElement monthDropDown=driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']"));
+Utility.selectVlueFromDropDown(monthDropDown, month);//Utility.selectVlueFromDropDown() this is method 
 		                             //from above "5" is a value of june on wesite
-		WebElement yearDropDown=driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']"));
-		Utility.selectVlueFromDropDown(yearDropDown, year);
+WebElement yearDropDown=driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']"));
+Utility.selectVlueFromDropDown(yearDropDown, year);
 		
 		//ab date select karna hai toh list use karna hoga 
 		//(mutiple dates) yeh return karta hai
-	      List<WebElement> dates=driver.findElements(By.xpath("//div[@class='react-datepicker__month']//div[@role='option']"));
+List<WebElement> dates=driver.findElements(By.xpath("//div[@class='react-datepicker__month']//div[@role='option']"));
 		//specific dates select karna ho toh(to iterate karenge)
 	      for(WebElement date:dates) {
 	    	if(date.getText().contains(dateToSelect))//date yeh(dateToSelect yane ham jo date dalenge)
@@ -120,6 +121,47 @@ public class Utility {
 		
 		
 	}
-	
+
+//comman code for multiselect dropdown
+
+public static ArrayList<String> selecOptionsFromMultiDropDown(WebElement multiDropDown,String[] options) {
+	Select select=new Select(multiDropDown);
+	//Apke dropdown main kitne option select kiye hai yeh bhi yaha pain dekh sakte hai
+	ArrayList<String> selectedOptions=new ArrayList<>();
+	//we have to select multiple optiom so we have to send it we will send it an in String of array Sting[]
+	//mutilpe option select karne hai matlab for loop use karna hoga
+	for(String option:options) {
+		select.selectByVisibleText(option);
+	}
+	//ArrayList kya karega select class ke pass ek method hai getAllSelectedOptions it will return list of web element
+	List<WebElement> selectedOptionByLogic=select.getAllSelectedOptions();//hame webelement nahi return karne hame element ke texr
+	                                                                      //ke String lene hai 
+	for(WebElement element:selectedOptionByLogic) 
+	{
+		selectedOptions.add(element.getText());
+	}
+	//list return karna hai isliye void type hatake ArrayList<String>  likhenge aur return selectedOptions
+	return selectedOptions;
+}
+// from parent window switch to child window
+public static String switchToNewWindow(WebDriver driver) {
+	String currentWindowHandle=driver.getWindowHandle();
+	Set<String>allWindowHandles=driver.getWindowHandles();
+	for(String handle:allWindowHandles) {
+		if(!(handle.equals(currentWindowHandle))) 
+		{
+			driver.switchTo().window(handle);
+		}
+	}
+	return currentWindowHandle;
+}
+//if we want to switch to back in parent window  (parent window pain kam karne ke liye hame jaha hamara control hain uska 
+// handle chahiye esliye hum woh upar return kar rahe hai)
+
+public static void switchToParentWindow(WebDriver driver, String windowHandle) {
+	//hame yaha pain handle ka nam pass karn apadega jo hum dynamically create kar rahe hai in String format
+	//
+	driver.switchTo().window(windowHandle);
+}
 	
 }

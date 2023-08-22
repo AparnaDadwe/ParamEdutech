@@ -18,8 +18,11 @@ public class HomePage {
 	WebElement femaleRadioButton;
 	WebElement orangeCheckBox;
 	WebElement blueCheckBox;
+	WebElement multiSelectDropDown;
 	
-	public HomePage(WebDriver driver) {
+	
+	public HomePage(WebDriver driver) 
+	{
 		
 		this.driver =  driver;
 		
@@ -32,7 +35,8 @@ public class HomePage {
 		this.pageTitle = driver.findElement(By.xpath("//h1[@class='title']"));
 	}
 	
-	public WebElement getSerchTextBox() {
+	public WebElement getSerchTextBox() 
+	{
 		setSerchTextBox();
 		return serchTextBox;
 	}
@@ -82,6 +86,7 @@ public class HomePage {
 	public void setBlueCheckBox() {
 		this.blueCheckBox = driver.findElement(By.xpath("//input[@id='checkbox2']"));
 	}
+	
 	public void setTextInSerachTextField(String textToSearch) {
 		getSerchTextBox().sendKeys(textToSearch);
 		
@@ -108,5 +113,13 @@ public class HomePage {
     	tableArray.add(elm.getText());// ek ek element ka text dega lekin table ke element add kro
     }
     return tableArray;
+    }
+    
+    public WebElement  getMultiSelectDropDownLocator() {
+    	multiSelectDropDown=driver.findElement(By.id("multiselect1"));
+    	return multiSelectDropDown;
+    }
+    public void clickOnThisBlogCreatedLink() {
+    	driver.findElement(By.id("selenium143")).click();
     }
 }

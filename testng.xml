@@ -4,6 +4,7 @@
 	<groups>
 		<run>
 			<include name="sanity"></include>
+			<include name="e2e"></include>
 		</run>
 	</groups>
 	<!-- 	<listeners>
@@ -13,10 +14,12 @@
 		<classes>
 			<class name="testCase.VerifyApplicationHomePageTitle" />
 			<!-- <class name="testCase.VerifyNewTourRegistration"/>-->
-			<!--<class name="testCase.VerifyOmayoBlogHomePage"/>
-      <class name="testCase.VerifyCheckBoxAndRadioButton"/>-->
-			<!-- <class name="testCase.TestCaseForReadExcelData"/>
-      <class name="testCase.IfTestFailureThenScreenShot"/>-->
+			<!--<class name="testCase.VerifyOmayoBlogHomePage"/>-->
+      <class name="testCase.VerifyCheckBoxAndRadioButton"/>
+     <!--  <class name="testCase.VerifyMultiselectDropDownFuntionality"/>-->
+       <!--<class name="testCase.VerifyPageNavigation"/>-->
+			<!-- <class name="testCase.TestCaseForReadExcelData"/>-->
+     <!--  <class name="testCase.IfTestFailureThenScreenShot"/>-->
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

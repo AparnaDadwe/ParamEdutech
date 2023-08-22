@@ -1,21 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="5" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-12T14:11:04 IST" name="Default suite" finished-at="2023-05-12T14:11:21 IST" duration-ms="17087">
+  <suite started-at="2023-08-22T14:14:06 IST" name="Suite" finished-at="2023-08-22T14:14:21 IST" duration-ms="14744">
     <groups>
+      <group name="e2e">
+        <method signature="VerifyCheckBoxAndRadioButton.VerifyCheckBoxAndRadioButtonBehaviours()[pri:1, instance:testCase.VerifyCheckBoxAndRadioButton@f0da945]" name="VerifyCheckBoxAndRadioButtonBehaviours" class="testCase.VerifyCheckBoxAndRadioButton"/>
+      </group> <!-- e2e -->
+      <group name="sanity">
+        <method signature="VerifyApplicationHomePageTitle.verifyPageTitle()[pri:1, instance:testCase.VerifyApplicationHomePageTitle@2fb3536e]" name="verifyPageTitle" class="testCase.VerifyApplicationHomePageTitle"/>
+      </group> <!-- sanity -->
     </groups>
-    <test started-at="2023-05-12T14:11:04 IST" name="Default test" finished-at="2023-05-12T14:11:21 IST" duration-ms="17087">
-      <class name="testCase.DatePickerExample">
-        <test-method signature="setUp()[pri:0, instance:testCase.DatePickerExample@5fbdfdcf]" started-at="2023-05-12T14:11:04 IST" name="setUp" finished-at="2023-05-12T14:11:21 IST" duration-ms="16852" status="PASS">
+    <test started-at="2023-08-22T14:14:06 IST" name="Test" finished-at="2023-08-22T14:14:21 IST" duration-ms="14744">
+      <class name="testCase.VerifyCheckBoxAndRadioButton">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCase.VerifyCheckBoxAndRadioButton@f0da945]" started-at="2023-08-22T14:14:15 IST" name="setup" finished-at="2023-08-22T14:14:21 IST" duration-ms="5924" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCase.DatePickerExample@5fbdfdcf]" started-at="2023-05-12T14:11:21 IST" name="tearDown" finished-at="2023-05-12T14:11:21 IST" duration-ms="203" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="VerifyCheckBoxAndRadioButtonBehaviours()[pri:1, instance:testCase.VerifyCheckBoxAndRadioButton@f0da945]" started-at="2023-08-22T14:14:21 IST" name="VerifyCheckBoxAndRadioButtonBehaviours" finished-at="2023-08-22T14:14:21 IST" duration-ms="206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyCheckBoxAndRadioButtonBehaviours -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testCase.VerifyCheckBoxAndRadioButton@f0da945]" started-at="2023-08-22T14:14:21 IST" name="tearDown" finished-at="2023-08-22T14:14:21 IST" duration-ms="141" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyCheckBoxAndRadioButtonBehaviours status=SUCCESS method=VerifyCheckBoxAndRadioButton.VerifyCheckBoxAndRadioButtonBehaviours()[pri:1, instance:testCase.VerifyCheckBoxAndRadioButton@f0da945] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCase.DatePickerExample -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- testCase.VerifyCheckBoxAndRadioButton -->
+      <class name="testCase.VerifyApplicationHomePageTitle">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCase.VerifyApplicationHomePageTitle@2fb3536e]" started-at="2023-08-22T14:14:07 IST" name="setup" finished-at="2023-08-22T14:14:15 IST" duration-ms="8340" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyPageTitle()[pri:1, instance:testCase.VerifyApplicationHomePageTitle@2fb3536e]" started-at="2023-08-22T14:14:15 IST" name="verifyPageTitle" finished-at="2023-08-22T14:14:15 IST" duration-ms="97" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPageTitle -->
+      </class> <!-- testCase.VerifyApplicationHomePageTitle -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
